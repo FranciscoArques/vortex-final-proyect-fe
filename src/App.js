@@ -28,6 +28,8 @@ import DisarrangeAppointmentButton from './components/appointment-related/disarr
 import DeleteAppointment from './components/appointment-related/deleteAppointment';
 import ShowUserAppointments from './components/appointment-related/showUserAppointments';
 
+import UserList from './components/user-related/showUsers';
+
 function App() {
   return (
     <Provider store={store}>
@@ -51,6 +53,7 @@ function App() {
               <Route path="/appointments/disarrange/:id" element={<DisarrangeAppointmentButton />} />
               <Route path="/appointments/doctor/:id" element={<AppointmentsDoctor />} />
               <Route path="/appointments/delete/:id" element={<DeleteAppointment />} />
+              <Route exact path="/patient/" element={<UserList />} />
               <Route path="/patient/:id" element={<ShowUserAppointments />} />
             </Routes>
           </Container>

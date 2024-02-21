@@ -18,7 +18,9 @@ import appointmentsReducer from '../controllers/showAppointmentSlice';
 import updateAppointmentReducer from '../controllers/updateAppointmentsSlice';
 import disarrangeAppointmentReducer from '../controllers/disarrangeAppointment';
 import deleteAppointment from '../controllers/deleteAppointmentSlice';
-import  appointmentUserSlice  from '../controllers/appointmentUserSlice';
+import appointmentUserSlice  from '../controllers/appointmentUserSlice';
+
+import usersSlice from '../controllers/showUsersSlice'
 
 const rootReducer = combineReducers({
     auth: authReducer,
@@ -33,7 +35,8 @@ const rootReducer = combineReducers({
     updateAppointment: updateAppointmentReducer,
     disarrangeAppointment: disarrangeAppointmentReducer,
     deleteAppointment: deleteAppointment,
-    userAppointments: appointmentUserSlice
+    userAppointments: appointmentUserSlice,
+    users: usersSlice
 });
 
 const persistConfig = {

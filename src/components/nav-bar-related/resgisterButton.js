@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { registerStart, registerSuccess, registerFailure } from '../../controllers/registrationSlice';
 
 const RegisterButton = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [age, setAge] = useState('');
@@ -25,7 +27,8 @@ const RegisterButton = () => {
         });
 
         dispatch(registerSuccess());
-        console.log(response.data);
+        console.log(response.data)
+        navigate('/login')
         } catch (error) {
         dispatch(registerFailure(error.message));
         console.error('Error registering:', error.message);

@@ -22,19 +22,24 @@ const ShowUserAppointments = () => {
 
     return (
         <div>
-            <h2 className='title log'>My Appointments</h2>
-            <section className='div-log'>
-                <ul className='doctor-log'>
-                    {appointments.map(appointment => (
-                        <li key={appointment._id}>
-                            <h3>Appointment</h3>
-                            <p>Date: {appointment.date}</p>
-                            <p>Doctor: {appointment.doctor.surname} {appointment.doctor.name}</p>
-                            <p>Speciality: {appointment.doctor.speciality}</p>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+            <h2 className='title log'>Appointments</h2>
+                { !appointments && (
+                    <h3 className='title log'>Any appointments have been taken</h3>
+                )}
+                { appointments && (
+                    <section className='div-log'>
+                        <ul className='doctor-log'>
+                        {appointments.map(appointment => (
+                            <li key={appointment._id}>
+                                <h3>Appointment</h3>
+                                <p>Date: {appointment.date}</p>
+                                <p>Doctor: {appointment.doctor.surname} {appointment.doctor.name}</p>
+                                <p>Speciality: {appointment.doctor.speciality}</p>
+                            </li>
+                        ))}
+                        </ul>
+                    </section>
+                )}
         </div>
     );
 };

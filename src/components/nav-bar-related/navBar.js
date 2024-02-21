@@ -61,6 +61,11 @@ export default function ButtonAppBar() {
                             <MenuItem onClick={handleClose} component={Link} to={`/patient/${userId}`}>Patient</MenuItem>
                             )}
                         </div>
+                        <div>
+                            { role === 'admin' && (
+                            <MenuItem onClick={handleClose} component={Link} to="/patient">Patient</MenuItem>
+                            )}
+                        </div>
 
                     </Menu>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
